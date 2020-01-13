@@ -16,4 +16,9 @@ class Pet extends Model
     public function scopeNameLike($query, $str) {
         return $query->where('type', 'like', "%{$str}%");
     }
+    
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }

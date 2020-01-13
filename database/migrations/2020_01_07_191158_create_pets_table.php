@@ -15,10 +15,12 @@ class CreatePetsTable extends Migration
     {
         Schema::create('pets', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->biginteger('user_id');
+            $table->biginteger('user_id')->unsigned();
             $table->string('type');
             $table->string('name')->nullable();
             $table->timestamps();
+            
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

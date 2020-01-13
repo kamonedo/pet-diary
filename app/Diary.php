@@ -16,4 +16,14 @@ class Diary extends Model
         'water' => 'required|boolean',
         'memo' => 'text|nullable'
     );
+    
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
+    
+    public function pet()
+    {
+        return $this->belongsTo('App\Pet');
+    }
 }
